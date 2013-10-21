@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block "page" %}
+    <script>
+        $(document).ready( function() {
+            $("#increase_button").on('click', function() {
+                    $.get($("#increase_button").data('url'), function(data)
+                        {
+                            $("#counter").html(data);
+                        });
+                    });
+                });
+    </script>
+
+    <a id="increase_button" data-url="/api/increase/{{ session.id }}/" data-role="button">Increase</a>
+    <h1 align="center">Number of Pascals</h1>
+    <h1 align="center" id="counter">{{ session.counter }}</h1>
+    Session id: {{ session.id }}
+
+{% endblock %}
