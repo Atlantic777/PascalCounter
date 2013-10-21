@@ -154,3 +154,5 @@ LOGGING = {
         },
     }
 }
+
+URL_PREFIX = ''
