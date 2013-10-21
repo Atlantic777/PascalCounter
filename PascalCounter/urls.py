@@ -7,6 +7,9 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'counter.views.home'),
+    url(r'^new_session/$', 'counter.views.new_session'),
+    url(r'^get_session/(\d+)/$', 'counter.views.get_session'),
+    url(r'^api/increase/(\d+)/$', 'counter.views.session_api'),
     # url(r'^PascalCounter/', include('PascalCounter.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

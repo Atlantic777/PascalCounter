@@ -3,5 +3,23 @@
 {% block "page" %}
 <a href="/api/create_session/" data-ajax="false" data-role="button">Create new session</a>
 
-<h2>Existing sessions</h2>
+<h2 align="center">Existing sessions</h2>
+<table border="1px" align="center">
+<thead align="center">
+    <tr>
+        <td>Session ID</td>
+        <td>Date</td>
+        <td>Count</td>
+        <td>Get session</td>
+    </tr>
+</thead>
+{% for session in sessions_list %}
+<tr>
+    <td>{{ session.id }}</td>
+    <td>{{ session.date }}</td>
+    <td>{{ session.counter }}</td>
+    <td><a data-ajax="false" href="/get_session/{{ session.id }}/">link</a></td>
+</tr>
+{% endfor %}
+</table>
 {% endblock %}
